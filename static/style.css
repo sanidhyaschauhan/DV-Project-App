@@ -1,0 +1,139 @@
+:root {
+    --jet: hsl(0, 0%, 22%);
+    --onyx: hsl(240, 1%, 17%);
+    --eerie-black-1: hsl(240, 3%, 13%);
+    --eerie-black-2: hsl(240, 2%, 12%);
+    --smoky-black: hsl(0, 0%, 7%);
+    --white-1: hsl(0, 0%, 100%);
+    --white-2: hsl(0, 0%, 98%);
+    --orange-yellow-crayola: hsl(45, 100%, 72%);
+    --vegas-gold: hsl(45, 54%, 58%);
+    --light-gray: hsl(0, 0%, 84%);
+    --light-gray-70: hsla(0, 0%, 84%, 0.7);
+    --bittersweet-shimmer: hsl(0, 43%, 51%);
+  }
+  
+  
+  @media (min-width: 1250px) {
+  
+    /**
+     * RESET
+     */
+  
+    body::-webkit-scrollbar {
+      width: 20px;
+    }
+  
+    body::-webkit-scrollbar-track {
+      background: var(--smoky-black);
+    }
+  
+    body::-webkit-scrollbar-thumb {
+      border: 5px solid var(--smoky-black);
+      background: hsla(0, 0%, 100%, 0.1);
+      border-radius: 20px;
+      box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
+        inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+    }
+  
+    body::-webkit-scrollbar-thumb:hover {
+      background: hsla(0, 0%, 100%, 0.15);
+    }
+  
+    body::-webkit-scrollbar-button {
+      height: 60px;
+    }
+  
+    main {
+      max-width: 1200px;
+      margin-inline: auto;
+      justify-content: center;
+      align-items: stretch;
+      gap: 25px;
+    }
+  }
+  
+  
+  
+  body {
+    background-color: var(--smoky-black);
+  }
+  
+  .navbar {
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 20px 0; */
+    background-color: var(--jet);
+  
+    li {
+      padding: 0 10px;
+    }
+  }
+  
+  .left_container {
+      float: left;
+      height: 100%;
+      background-color: var(--eerie-black-1);
+      padding: 20px;
+      height: 700px;
+  
+      .top_left {
+        min-height: 500px;
+      }
+  
+      .bottom_left {
+      
+        .table {
+          /* width: 60%; */
+          /* border-collapse: collapse; */
+          /* border-spacing: 0; */
+          /* margin-top: 20px; */
+  
+          th {
+            background-color: var(--eerie-black-2);
+            color: var(--white-1);
+            padding: 10px;
+            text-align: left;
+          }
+  
+          td {
+            background-color: var(--eerie-black-1);
+            color: var(--white-1);
+            padding: 10px;
+            text-align: left;
+          }
+  
+          tr:nth-child(even) {
+            background-color: var(--eerie-black-2);
+          }
+  
+          tr:nth-child(odd) {
+            background-color: var(--eerie-black-1);
+          }
+        }
+      }
+  
+  }
+  
+  .right_container {
+      height: 100%;
+      background-color: var(--eerie-black-2);
+      padding: 20px;
+      height: 700px;
+      display: inline-block;
+      .top_right {
+        .avg-score {
+          background-color: var(--eerie-black-1);
+          color: var(--white-1);
+          padding: 10px;
+          text-align: center;
+          height: 230px;
+          margin-bottom: 20px;
+        }
+        min-height: 300px;
+      }
+      .bottom_right {
+        min-height: 100px;
+      }
+  }
