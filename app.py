@@ -1,13 +1,15 @@
 from flask import Flask, request, jsonify
-from models.csqa_model.py import CSQAModel
+from flask_cors import CORS
+from models.csqa_model import CSQAModel
 from dotenv import load_dotenv
 import os
 
 app = Flask(__name__)
+CORS(app, support_credentials=True)
 
 load_dotenv()
 
-model = CSQAModel()
+model = CSQAModel(model_path="utils/csqa_finetuned_model.pth")
 
 @app.route('/')
 def home():
@@ -22,9 +24,15 @@ def predict_route():
     data = request.get_json(force=True)
     if 'question' not in data:
         return jsonify({"error": "Invalid input, 'question' field is required"}), 400
+    
+    question_data = data['question']
+    response = model.predict(question_data)
 
-    response = model.predict(data['question'])
     return jsonify(response)
 
+@app.route('/server_status', methods=['GET'])
+def server_status():
+    return "Server is up"
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    app.run(debug=True)
