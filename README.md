@@ -16,7 +16,7 @@ DV-Project-App is a web-based application designed for performing various data-d
 ## 4. Installation and Setup
 1. **Clone the Repository:**
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/sanidhyaschauhan/DV-Project-App
    ```
 2. **Navigate to the Project Directory:**
    ```bash
